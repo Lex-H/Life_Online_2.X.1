@@ -10,6 +10,37 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+        <!-- checkbox設定單獨列出 避免被範本CSS影響 -->
+        <style>
+            input[type="checkbox"] {
+                width:1em;
+                height:1em;
+                -webkit-appearance: checkbox;
+            }
+            legend[id="日記表單legend"] {
+                text-align:center;
+            }
+            ul[id="日記表單ul"] {
+                text-align:center;
+                list-style-type: none;
+            }
+            form label {
+                display:inline-block
+            }
+            li {
+                display:inline-block
+            }
+            form textarea[id="日記文字框"] {
+                width:70%;
+                margin:0px auto;
+            }
+            button[id="儲存日記"], button[id="其他選項"] {
+                display:block;
+                margin:0 auto
+            }
+
+        </style>
+        
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -32,9 +63,6 @@
 											<li><a href="#">感謝</a></li>
 										</ul>
 									</li>
-									<li><a href="left-sidebar.html">日記本</a></li>
-									<li class="break"><a href="right-sidebar.html">成就統計</a></li>
-									<li><a href="no-sidebar.html">感謝</a></li>
 								</ul>
 							</nav>
 
@@ -43,6 +71,59 @@
 					
 
 				</div>
+
+            <!-- Form -->
+                <main>
+                    <form id="日記表單">
+                        <!-- 複選框 之後做成圖案快速選取做了什麼事情 -->
+                        <fieldset>
+                            <legend id="日記表單legend">今天發生了什麼事</legend>
+                            <ul id="日記表單ul">
+                                <li>
+                                    <label for="早睡早起">早睡早起</label>
+                                    <input type="checkbox" id="早睡早起" name="早睡早起" value="早睡早起">
+                                </li>
+                                <li>
+                                    <label for="運動">運動</label>
+                                    <input type="checkbox" id="運動" name="運動" value="運動">
+                                </li>
+                                <li>
+                                    <label for="記帳">記帳</label>
+                                    <input type="checkbox" id="記帳" name="記帳" value="記帳">
+                                </li>
+                                <li>
+                                    <label for="重量訓練">重量訓練</label>
+                                    <input type="checkbox" id="重量訓練" name="重量訓練" value="重量訓練">
+                                </li>
+                                <li>
+                                    <label for="跟朋友去玩">跟朋友去玩</label>
+                                    <input type="checkbox" id="跟朋友去玩" name="跟朋友去玩" value="跟朋友去玩">
+                                </li>
+                                <li>
+                                    <label for="工作">工作</label>
+                                    <input type="checkbox" id="工作" name="工作" value="工作">
+                                </li>
+                                <li>
+                                    <label for="學習">學習</label>
+                                    <input type="checkbox" id="學習" name="學習" value="學習">
+                                </li>
+                                <li>
+                                    <label for="娛樂">娛樂</label>
+                                    <input type="checkbox" id="娛樂" name="娛樂" value="娛樂">
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <!--文字日記-->
+                        <div id="文字日記div">
+                            <textarea id="日記文字框" rows="5" type="text" required></textarea>
+                        </div>
+                        <div>
+                            <button id="儲存日記">儲存日記</button>
+                            <button id="其他選項">其他選項</button>
+                        </div>
+                    </form>
+                </main>
+
 
 
 			<!-- Footer -->
